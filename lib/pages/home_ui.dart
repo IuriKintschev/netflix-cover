@@ -1,5 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:netflix/model/movie_model.dart';
+import 'package:netflix/pages/content_scrool.dart';
+import 'package:netflix/pages/movie_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -33,53 +36,62 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         );
       },
-      child: Stack(
-        children: <Widget>[
-          Center(
-            child: Container(
-              margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black54,
-                    offset: Offset(0.0, 4.0),
-                    blurRadius: 10.0,
-                  ),
-                ],
-              ),
-              child: Center(
-                child: Hero(
-                  tag: movies[index].imageUrl,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
-                    child: Image(
-                      image: AssetImage(movies[index].imageUrl),
-                      height: 220.0,
-                      fit: BoxFit.cover,
+      child: GestureDetector(
+        onTap: () => Navigator.of(context).push(
+          CupertinoPageRoute(
+            builder: (context) => MovieScreen(
+              movie: movies[index],
+            ),
+          ),
+        ),
+        child: Stack(
+          children: <Widget>[
+            Center(
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black54,
+                      offset: Offset(0.0, 4.0),
+                      blurRadius: 10.0,
+                    ),
+                  ],
+                ),
+                child: Center(
+                  child: Hero(
+                    tag: movies[index].imageUrl,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10.0),
+                      child: Image(
+                        image: AssetImage(movies[index].imageUrl),
+                        height: 220.0,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
-          ),
-          Positioned(
-            left: 30,
-            bottom: 40,
-            right: 30,
-            child: Container(
-              width: 250,
-              child: Text(
-                movies[index].title.toUpperCase(),
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+            Positioned(
+              left: 30,
+              bottom: 40,
+              right: 30,
+              child: Container(
+                width: 250,
+                child: Text(
+                  movies[index].title.toUpperCase(),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -170,6 +182,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 );
               },
             ),
+          ),
+          SizedBox(height: 20),
+          ContentScroll(
+            images: myList,
+            title: 'Minha lista',
+            imageH: 250.0,
+            imageW: 150.0,
+          ),
+          SizedBox(height: 10),
+          ContentScroll(
+            images: popular,
+            title: 'Popular',
+            imageH: 250.0,
+            imageW: 150.0,
           ),
         ],
       ),
