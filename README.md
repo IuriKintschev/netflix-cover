@@ -1,16 +1,11 @@
-# netflix
+# Netflix View
 
-A new Flutter project.
+app flutter
 
-## Getting Started
+## Dribbble
 
-This project is a starting point for a Flutter application.
+Layout inspirado https://www.youtube.com/redirect?redir_token=kF-f9hH06OY6nzUV6I5bijqquk98MTU3MDk4Njk1OEAxNTcwOTAwNTU4&q=https%3A%2F%2Fdribbble.com%2Fshots%2F5026483-Netflix-Mobile-App-Redesign%2F&event=video_description&v=sgfMdhV4HQI
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+##### creditos
+    https://github.com/MarcusNg
