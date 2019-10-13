@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:netflix/model/movie_model.dart';
 import 'package:netflix/pages/content_scrool.dart';
@@ -37,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
       },
       child: GestureDetector(
         onTap: () => Navigator.of(context).push(
-          MaterialPageRoute(
+          CupertinoPageRoute(
             builder: (context) => MovieScreen(
               movie: movies[index],
             ),
