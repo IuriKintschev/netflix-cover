@@ -6,6 +6,3 @@ app flutter
 
 Layout inspirado https://dribbble.com/shots/5026483-Netflix-Mobile-App-Redesign/
 
-
-##### creditos
-    https://github.com/MarcusNg
